@@ -1,14 +1,13 @@
 class Solution {
 public:
     int findFinalValue(vector<int>& nums, int original) {
-  int i=0;
-        while(i!=nums.size())
+ sort(nums.begin(),nums.end());
+        for(int num:nums)
         {
-            if(nums[i]==original){
-            original *= 2;
-            i=0;
+            if(num==original)
+            {
+                original*=2;
             }
-            else i++;
         }
         return original;
     }
